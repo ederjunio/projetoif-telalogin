@@ -1,11 +1,14 @@
 
-</<?php 
+</<?php
+    //Conexão
+    include_once 'php_action/db_connect.php';
+
     //Header
     include_once 'includes/header.php';
 ?>
 
 <div class="row">
-        <div class="col s12 m6 push-m3 ">
+        <div class="col s12 m6 push-m3">
             <h3 class="light">Clientes</h3>
             <table class="striped">
                 <thead>
@@ -37,7 +40,7 @@
                 </tbody>
             </table>
             <br>
-            <a href="" class="btn">Adicionar Cliente</a>
+            <a href="adicionar.php" class="btn">Adicionar Cliente</a>
         </div>
 </div>
 
