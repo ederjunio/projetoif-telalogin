@@ -10,7 +10,7 @@
     if(isset($_GET['idUsuario'])):
         $idUsuario = mysqli_escape_string($connect,$_GET['idUsuario']);
 
-        $sql = "SELECT * FROM usuario WHERE idUsuario = 'idUsuario'";
+        $sql = "SELECT * FROM usuario WHERE idUsuario = '$idUsuario'";
         $resultado = mysqli_query($connect,$sql);
         $dados = mysqli_fetch_array($resultado);
     endif;
