@@ -4,6 +4,7 @@
 
 	//Conexão
 	require_once 'db_connect.php';
+	
 	if(isset($_POST['btn-cadastrar'])):
 		$nome_usuario = mysqli_escape_string($connect,$_POST['nome_usuario']);
 		$senha = mysqli_escape_string($connect,$_POST['senha']);

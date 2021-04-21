@@ -20,7 +20,7 @@
         <div class="col s12 m6 push-m3 ">
             <h3 class="light">Alterar Cliente</h3>
             <form action="php_action/update.php" method="POST">
-                <input type="hidden" name="idUsuario" value="<?php echo $dados['idUsuario']; ?>">
+                    <input type="hidden" name="idUsuario" value="<?php echo $dados['idUsuario']; ?>">
 
                     <div class="input-field col s12">
                         <input type="text" name="nome_usuario" id="nome_usuario" value="<?php echo $dados['nome_usuario'] ?>">

@@ -35,6 +35,9 @@
                         <?php
                             $sql = "SELECT * FROM usuario";
                             $resultado = mysqli_query($connect,$sql);
+
+                            if(mysqli_num_rows($resultado) > 0):
+
                             while($dados = mysqli_fetch_array($resultado)):
 
                         ?>
@@ -48,15 +51,40 @@
                         <td><?php echo $dados['cpf'] ?></td>
                         <td><?php echo $dados['telefone'] ?></td>
                         
-                        <td> <a href="editar.php?idUsuario=<?php echo $dados['idUsuario']; ?>" class="btn-floating orange"> <i class="material-icons">edit</i> </a></td>
-                        <td> <a href="" class="btn-floating red"> <i class="material-icons">delete</i> </a></td>
+                        <td> <a href="editar.php?idUsuario=<?php echo $dados['idUsuario']; ?>" class="btn-floating orange"> <i class="material-icons" >edit</i> </a></td>
+
+                        <td> <a href="#modal<?php echo $dados['idUsuario'] ?>" class="btn-floating red modal-trigger"> <i class="material-icons">delete</i> </a></td>
+
+                        <!-- Modal Structure -->
+                        <!-- Modal Structure -->
+                        <div id="modal<?php echo $dados['idUsuario'] ?>" class="modal">
+                        <div class="modal-content">
+                            <h4>Atenção!</h4>
+                            <p>Deseja mesmo apagar o registro?</p>
+                        </div>
+                        <div class="modal-footer">
+
+                            <form action="php_action/delete.php" method="POST">
+                                <input type="hidden" name="idUsuario" value="<?php echo $dados['idUsuario'] ?>">
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat orange col s20 push-m3">Cancelar</a>
+                                <button type="submit" name="btn-deletar" class="btn red col s20 push-m3">Excluir</button>
+                            </form>
+
+                        </div>
+                      </div>
+
                     </tr>
 
                     <?php
                         endwhile;
+                        else: ?>
+
+                            <tr>
+                                <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                            </tr>
+                        <?php
+                        endif;
                     ?>
-
-
                 </tbody>
             </table>
             <br>
