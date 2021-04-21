@@ -1,24 +1,39 @@
-<!DOCTYPE html>
-  <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Barbearia</title>
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
+</<?php 
+    //Header
+    include_once 'includes/header.php';
+?>
 
-    
+<div class="row">
+        <div class="col s12 m6 push-m3 ">
+            <h3 class="light">Clientes</h3>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Nome: </th>
+                        <th>Sobrenome: </th>
+                        <th>E-mail: </th>
+                        <th>Idade: </th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                    <tr>
+                        <td>Eder</td>
+                        <td>Xavier</td>
+                        <td>eder.xavier.ti@gmail.com</td>
+                        <td>42</td>
+                        <td> <a href="" class="btn-floating orange"> <i class="material-icons">edit</i> </a></td>
+                        <td> <a href="" class="btn-floating red"> <i class="material-icons">delete</i> </a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <a href="" class="btn">Adicionar Cliente</a>
+        </div>
+</div>
 
-
-
-        <!--JavaScript at end of body for optimized loading-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    </body>
-  </html>
+<?php
+    //Footer
+    include_once 'includes/footer.php';
+?>
