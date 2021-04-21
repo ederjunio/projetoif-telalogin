@@ -48,7 +48,7 @@
                         <td><?php echo $dados['cpf'] ?></td>
                         <td><?php echo $dados['telefone'] ?></td>
                         
-                        <td> <a href="" class="btn-floating orange"> <i class="material-icons">edit</i> </a></td>
+                        <td> <a href="editar.php?idUsuario=<?php echo $dados['idUsuario']; ?>" class="btn-floating orange"> <i class="material-icons">edit</i> </a></td>
                         <td> <a href="" class="btn-floating red"> <i class="material-icons">delete</i> </a></td>
                     </tr>
 
