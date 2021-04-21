@@ -1,10 +1,16 @@
 
 </<?php
+
+
     //Conexão
     include_once 'php_action/db_connect.php';
 
     //Header
     include_once 'includes/header.php';
+
+    //Mensagens
+    include_once 'includes/message.php';
+
 ?>
 
 <div class="row">
@@ -26,17 +32,31 @@
 
                 <tbody>
                     <tr>
-                        <td>01</td>
-                        <td>Eder</td>
-                        <td>********</td>
-                        <td>xavier</td>
-                        <td>21/04/2021</td>
-                        <td>eder.xavier.ti@gmail.com</td>
-                        <td>040690756-07</td>
-                        <td>35991001121</td>
+                        <?php
+                            $sql = "SELECT * FROM usuario";
+                            $resultado = mysqli_query($connect,$sql);
+                            while($dados = mysqli_fetch_array($resultado)):
+
+                        ?>
+
+                        <td><?php echo $dados['idUsuario'] ?></td>
+                        <td><?php echo $dados['nome_usuario'] ?></td>
+                        <td><?php echo $dados['senha'] ?></td>
+                        <td><?php echo $dados['login'] ?></td>
+                        <td><?php echo $dados['data_cadastro'] ?></td>
+                        <td><?php echo $dados['email'] ?></td>
+                        <td><?php echo $dados['cpf'] ?></td>
+                        <td><?php echo $dados['telefone'] ?></td>
+                        
                         <td> <a href="" class="btn-floating orange"> <i class="material-icons">edit</i> </a></td>
                         <td> <a href="" class="btn-floating red"> <i class="material-icons">delete</i> </a></td>
                     </tr>
+
+                    <?php
+                        endwhile;
+                    ?>
+
+
                 </tbody>
             </table>
             <br>
