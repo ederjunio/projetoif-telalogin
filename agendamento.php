@@ -2,7 +2,14 @@
 <?php
 //header
 include_once 'includes/header.php';
+
+//Verificar se tem sessão aberta
+    if(!isset($_SESSION['logado'])):
+      header('Location: index.php');
+    endif;
+
 ?>
+
 <h1 class="white-text">Ola 
 <!--<?php echo $dados['nome']; ?>-->
 ,</h1> 

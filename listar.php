@@ -9,6 +9,17 @@
     //Mensagens
     include_once 'includes/message.php';
 
+    /*
+    //Verificar se tem sessão aberta
+    if(!isset($_SESSION['logado'])):
+        header('Location: index.php');
+    endif;
+    */
+
+    //ESSE NÃO É AQUI - PRECISA VER CERTINHO ONDE COLOCAR
+    //Verificar sobre fechar a conexão com o banco de dados.
+        //mysqli_close($connect);
+
 ?>
 
 <div class="row">

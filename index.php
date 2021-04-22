@@ -25,6 +25,8 @@
 
 					if(mysqli_num_rows($resultado) == 1):
 						$dados = mysqli_fetch_array($resultado);
+						//Verificar sobre fechar a conexão com o banco de dados.
+        				//mysqli_close($connect);
 						$_SESSION['logado'] = true;
 						$_SESSION['id_usuario'] = $dados['$idUsuario'];
 						//Aqui é o redirecionamento que precisa ser corrigido quando estiver todo o projeto montado.
@@ -49,7 +51,8 @@
 	<meta charset="utf-8">
 </head>
 <body>
-		<h1>Sistema Barbearia Inteligente</h1>
+	<center>
+	<h3>Sistema Barbearia Inteligente</h3>
 	
 	<?php
 		if(!empty($erros)):
@@ -59,11 +62,19 @@
 		endif;
 
 	?>
+	
 	<hr>
 	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 		Login: <input type="text" name="login"><br>
 		Senha: <input type="password" name="senha"><br>
 		<button type="submit" name="btn-entrar" class="btn green col s20 push-m3">Entrar</button>
 	</form>
+	<br/><br/>
+	<hr>
+	
+	<br/><br/>
+	<h4>Para fazer um cadastro, favor clicar no link abaixo:</h4>
+	<button type="submit" name="btn-adicionar" class="btn yellow col s20 push-m3 "><a href="adicionar.php">Fazer cadastro.</a></button>
+	</center>
 </body>
 </html>

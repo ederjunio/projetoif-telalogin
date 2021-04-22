@@ -6,6 +6,14 @@
     //Header
     include_once 'includes/header.php';
 
+    /*
+    //Verificar se tem sessão aberta
+    if(!isset($_SESSION['logado'])):
+        header('Location: index.php');
+    endif;
+    */
+
+
     //Select
     if(isset($_GET['idUsuario'])):
         $idUsuario = mysqli_escape_string($connect,$_GET['idUsuario']);
@@ -13,6 +21,9 @@
         $sql = "SELECT * FROM usuario WHERE idUsuario = '$idUsuario'";
         $resultado = mysqli_query($connect,$sql);
         $dados = mysqli_fetch_array($resultado);
+
+        //Verificar sobre fechar a conexão com o banco de dados.
+        //mysqli_close($connect);
     endif;
 ?>
 
