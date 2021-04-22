@@ -18,10 +18,10 @@
 
 		if(mysqli_query($connect,$sql)):
 			$_SESSION['mensagem'] = "Cadastro realizado com sucesso!";
-			header('Location: ../index.php');
+			header('Location: ../listar.php');
 		else:
 			$_SESSION['mensagem'] = "Erro ao cadastrar!";
-			header('Location: ../index.php');
+			header('Location: ../listar.php');
 		endif;
 
 	endif;

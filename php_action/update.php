@@ -20,10 +20,10 @@
 
 		if(mysqli_query($connect,$sql)):
 			$_SESSION['mensagem'] = "Alteração feita com sucesso!";
-			header('Location: ../index.php');
+			header('Location: ../listar.php');
 		else:
 			$_SESSION['mensagem'] = "Erro ao fazer alteração!";
-			header('Location: ../index.php');
+			header('Location: ../listar.php');
 		endif;
 	endif;
 ?>

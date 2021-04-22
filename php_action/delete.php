@@ -13,10 +13,10 @@
 
 		if(mysqli_query($connect,$sql)):
 			$_SESSION['mensagem'] = "Deletado com sucesso!";
-			header('Location: ../index.php');
+			header('Location: ../listar.php');
 		else:
 			$_SESSION['mensagem'] = "Erro ao deletar cadastro!";
-			header('Location: ../index.php');
+			header('Location: ../listar.php');
 		endif;
 	endif;
 ?>

@@ -37,7 +37,7 @@
                         <label for="telefone">Telefone</label>
                     </div>
                     <button type="submit" name="btn-cadastrar" class="btn">Cadastrar</button>
-                    <a href="index.php" class="btn green">Listar Clientes</a>
+                    <a href="listar.php" class="btn green">Listar Clientes</a>
             </form>            
         </div>
 </div>
