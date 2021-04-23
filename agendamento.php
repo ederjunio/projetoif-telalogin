@@ -3,10 +3,12 @@
 //header
 include_once 'includes/header.php';
 
-//Verificar se tem sessão aberta
+    /*
+    //Verificar se tem sessão aberta
     if(!isset($_SESSION['logado'])):
-      header('Location: index.php');
+        header('Location: index.php');
     endif;
+    */
 
 ?>
 
@@ -85,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <p>Selecione abaixo sua próxima opção</p>
   
-  <button type="submit" name="btn-agendar" class="btn yellow col s20 push-m3 "><a href="home.php">Voltar ao início</a></button>
+  <button type="submit" name="btn-home" class="btn yellow col s20 push-m3 "><a href="home.php">Voltar ao início</a></button>
   <br/><br/>
   <button type="submit" name="btn-sair" class="btn yellow col s20 push-m3 "><a href="logout.php">Clique para sair!</a></button>
   </center>
