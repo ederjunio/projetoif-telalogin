@@ -14,24 +14,33 @@
     */
 
     //Buscando os dados para exibição
+    
     /*
     $user = $_SESSION['id_usuario'];
-    $sql = "SELECT * FROM usuario WERE user = '$user'";
+    $sql = "SELECT * FROM usuario WHERE idUsuario = '$user'";
     $resultado = mysqli_query($connect, $sql);
     $dados = mysqli_fetch_array($resultado);
 
-    mysqli_close($connect);
-	*/
+        
+    echo "Seja bem vindo, " . $dados['nome_usuario'];
 
+    //mysqli_close($connect);
+
+    */    
 
 
 ?>
 
- 	<center>
- 	<h1> Seja bem vindo!</h1>
-	<h4>Selecione abaixo a melhor opção</h4>
-	<br/><br/>
-	<button type="submit" name="btn-agendar" class="btn yellow col s20 push-m3 "><a href="agendamento.php">Clique para agendar</a></button>
-	<br/><br/>
-	<button type="submit" name="btn-sair" class="btn yellow col s20 push-m3 "><a href="logout.php">Clique para sair!</a></button>
-	</center>
+    <center>
+    <h1> Seja bem vindo! </h1>
+    <h4>Selecione abaixo a melhor opção</h4>
+    <br/><br/>
+    <button type="submit" name="btn-agendar" class="btn yellow col s20 push-m3 "><a href="agendamento.php">Clique para agendar</a></button>
+    <br/><br/>
+    <button type="submit" name="btn-sair" class="btn yellow col s20 push-m3 "><a href="logout.php">Clique para sair!</a></button>
+    </center>
+
+ <?php
+    //Footer
+    include_once 'includes/footer.php';
+?>

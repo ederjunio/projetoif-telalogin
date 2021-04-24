@@ -4,7 +4,7 @@
 include_once 'includes/header.php';
 ?>
 <h1 class="white-text">Ola 
-<!--<?php echo $dados['nome_usuario']; ?>-->
+<!--<?php echo $dados['nome']; ?>-->
 ,</h1> 
 <div style="text-align:center;">
 
