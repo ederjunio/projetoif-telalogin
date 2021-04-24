@@ -2,18 +2,9 @@
 <?php
 //header
 include_once 'includes/header.php';
-
-    /*
-    //Verificar se tem sessão aberta
-    if(!isset($_SESSION['logado'])):
-        header('Location: index.php');
-    endif;
-    */
-
 ?>
-
 <h1 class="white-text">Ola 
-<!--<?php echo $dados['nome']; ?>-->
+<!--<?php echo $dados['nome_usuario']; ?>-->
 ,</h1> 
 <div style="text-align:center;">
 
@@ -29,7 +20,7 @@ include_once 'includes/header.php';
 
 <div class="row">
 <h5 class="white-text">O que vamos fazer?</h5>
-<form class="col s12" >
+<form class="col s12" id="agendar" action="php_action/agendar.php" method="POST" >
 <div class="input-field col s12">
 <select multiple>
 <option value="" disabled selected>Selecionar serviços :</option>
