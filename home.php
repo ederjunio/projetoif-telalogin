@@ -16,17 +16,20 @@
     //Buscando os dados para exibição
     
     /*
+    
     $user = $_SESSION['id_usuario'];
     $sql = "SELECT * FROM usuario WHERE idUsuario = '$user'";
     $resultado = mysqli_query($connect, $sql);
     $dados = mysqli_fetch_array($resultado);
 
-        
-    echo "Seja bem vindo, " . $dados['nome_usuario'];
+      
+    echo "Olá ".$_SESSION['nome_usuario'].", Bem vindo <br>";
+
+    //echo "Seja bem vindo, " . $dados['nome_usuario'];
 
     //mysqli_close($connect);
 
-    */    
+      */
 
 
 ?>
