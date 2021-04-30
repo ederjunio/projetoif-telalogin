@@ -2,8 +2,9 @@
 //conexão
 require_once 'php_action/db_connect.php';
 include_once 'includes/header.php';
-include_once 'includes/message.php';
 
+//sessão
+session_start();
 
 //botão enviar
 if(isset($_POST['btn-entrar'])):
@@ -12,8 +13,7 @@ if(isset($_POST['btn-entrar'])):
     $senha = mysqli_escape_string($connect, $_POST['senha']);
     // verificar se o campo usuário ou senha está vazio.
     if(empty($login) or empty($senha)):
-        $_SESSION['mensagem'] = "Os campos login e senha não podem estar vazios!";
-        
+        $erros[] = "<li> O campo login/senha precisa ser preenchido </li>";//array para armazenar erros
     else:
         $sql = "SELECT login FROM usuario WHERE login = '$login'";
         $resultado = mysqli_query($connect, $sql);
@@ -32,12 +32,10 @@ if(isset($_POST['btn-entrar'])):
                 $_SESSION['id_usuario'] = $dados['idUsuario'];
                 header('Location:home.php');
             else:
-                $_SESSION['mensagem'] = "Login ou senha inválidos! Tente novamente.";
-                
+                $erros[] = "<li>Login ou senha inválido !! Tente Novamente.</li>";
             endif;
         else:
-            $_SESSION['mensagem'] = "Usuário não possui cadastro, clique abaixo para cadastrar!";
-            
+            $erros[] = "<li>Login não possui cadastro, clique abaixo para cadastrar !! </li>";
         endif;   
 
     endif;
@@ -48,19 +46,18 @@ endif;
 <html>
 
 <head>
-    <title>Barber Shop - Login</title>
+    <title>Login</title>
     <meta charset="utf-8">
 </head>
 
 <body>
+
     <div class="parallax-container">
         <div class="parallax"><img src="imagens/logo.jpg"></div>
     </div>
-
-    <center>
     <div class="section card-panel teal brown darken-4">
         <div class="row container">
-            <h2 class="header white-text">Acesso de usuário Vip</h2>
+            <h2 class="header">Login de Usuário Vip</h2>
             <!-- Se o array erros não estiver vazio é porque contém erro vai exibir.-->
             <?php
                 if(!empty($erros)):
@@ -74,27 +71,21 @@ endif;
                 <div class="col s12 m8 push-m2">
 
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                        <div class="white-text input-field col s12">
-                            Login: <input class="white-text center" type="text" name="login"></br>
+                        <div class="input-field col s12">
+                            Login: <input type="text" name="login"></br>
                         </div>
 
-                        <div class="white-text input-field col s12">
-                            Senha: <input class="white-text center" type="password" name="senha"></br>
+                        <div class="input-field col s12">
+                            Senha: <input type="password" name="senha"></br>
                         </div>
                         <button type="submit" name="btn-entrar" class="btn black">Entrar</button>
 
                     </form>
-                    <br/><br/>
-
-                    <h5 class="white-text">Para se cadastrar clique no link abaixo:</h5>
-                    <button type="submit" name="btn-adicionar" class="white-text center btn black"><a class="white-text" href="usuario.php">Fazer cadastro</a></button>
 
                 </div>
             </div>
         </div>
     </div>
-    
-    </center>
     <div class="parallax-container">
         <div class="parallax"><img src="imagens/ambiente.jpg"></div>
     </div>

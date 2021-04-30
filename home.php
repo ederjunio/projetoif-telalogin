@@ -1,49 +1,58 @@
 <?php
-	//Conexão
-    include_once 'php_action/db_connect.php';
-    //Header
-    include_once 'includes/header.php';
-    //Mensagens
-    include_once 'includes/message.php';
+//conexão
+require_once 'php_action/db_connect.php';
+include_once 'includes/header.php';
 
-    /*
-    //Verificar se tem sessão aberta
-    if(!isset($_SESSION['logado'])):
-        header('Location: index.php');
-    endif;
-    */
+//sessão
+session_start();
 
-    //Buscando os dados para exibição
-    
-    /*
-    
-    $user = $_SESSION['id_usuario'];
-    $sql = "SELECT * FROM usuario WHERE idUsuario = '$user'";
-    $resultado = mysqli_query($connect, $sql);
-    $dados = mysqli_fetch_array($resultado);
+//verificação
+if(!isset($_SESSION['logado'])):
+    header('Location: login.php');
+endif;
 
-      
-    echo "Olá ".$_SESSION['nome_usuario'].", Bem vindo <br>";
-
-    //echo "Seja bem vindo, " . $dados['nome_usuario'];
-
-    //mysqli_close($connect);
-
-      */
-
-
+//Dados
+$id = $_SESSION['id_usuario'];
+$sql = "SELECT * FROM usuario WHERE idUsuario = '$id'";
+$resultado = mysqli_query($connect, $sql);
+$dados = mysqli_fetch_array($resultado);
+mysqli_close($connect);
 ?>
 
+<html>
+
+<head>
+    <title>Página Restrita</title>
+    <meta charset="utf-8">
+</head>
+
+<body class="teal brown darken-4 white-text">
+    
+	<div class="parallax-container">
+        <div class="parallax"><img src="imagens/ambiente.jpg"></div>
+    </div>
+
     <center>
-    <h1> Seja bem vindo! </h1>
-    <h4>Selecione abaixo a melhor opção</h4>
-    <br/><br/>
-    <button type="submit" name="btn-agendar" class="btn yellow col s20 push-m3 "><a href="agendamento.php">Clique para agendar</a></button>
-    <br/><br/>
-    <button type="submit" name="btn-sair" class="btn yellow col s20 push-m3 "><a href="logout.php">Clique para sair!</a></button>
+    	<h1>Olá, <?php echo $dados['nome_usuario']; ?></h1>
+    	<br/><br/>
+    	<h4>Selecione abaixo a melhor opção</h4>
+    	<br/><br/>
+    	<button type="submit" name="btn-agendar" class="btn black"><a class="white-text" href="agendamento.php">Clique para agendar</a></button>
+    	<br/><br/>
+    	<button type="submit" name="btn-agendar" class="btn black"><a class="white-text" href="editar.php">Editar seu cadastro</a></button>
+    	<br/><br/>
+    	<button type="submit" name="btn-sair" class="btn black"><a class="white-text" href="logout.php">Clique para sair!</a></button>
+    	<br/><br/>
     </center>
 
- <?php
-    //Footer
-    include_once 'includes/footer.php';
+    <div class="parallax-container">
+    	<div class="parallax"><img src="imagens/ambiente.jpg"></div>
+	</div>
+
+</body>
+
+</html>
+
+<?php
+    include_once 'includes/footer.php'
 ?>

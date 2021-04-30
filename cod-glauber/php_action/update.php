@@ -2,7 +2,6 @@
     session_start();
 
     require_once 'db_connect.php';
-    
 
     if(isset($_POST['btn-editar'])):
         $nome_usuario = mysqli_escape_string($connect, $_POST['nome_usuario']);
@@ -19,10 +18,10 @@
    
     if(mysqli_query($connect, $sql)):
         $_SESSION['mensagem'] = "Alterado com sucesso!";
-        header('Location: ../home.php?');
+        header('Location: ../index.php?');
     else: 
         $_SESSION['mensagem'] = "Erro ao alterar!";
-        header('Location: ../home.php?');
+        header('Location: ../index.php?');
     endif;
 
 endif;
