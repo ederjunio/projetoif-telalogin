@@ -28,33 +28,33 @@ endif;
                     <input type="hidden" name="idUsuario" value="<?php echo $dados['idUsuario']; ?>">
 
                     <div class="input-field col s12">
-                        <input type="text" name="nome_usuario" id="nome_usuario"
+                        <input class="white-text" type="text" name="nome_usuario" id="nome_usuario"
                             value="<?php echo $dados['nome_usuario']; ?>">
                         <label for="nome_usuario">Nome Completo</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="password" name="senha" id="senha" value="<?php echo $dados['senha'];?>">
+                        <input class="white-text" type="password" name="senha" id="senha" value="<?php echo $dados['senha'];?>">
                         <label for="senha">Definir Senha</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="text" name="login" id="login" value="<?php echo $dados['login'];?>">
+                        <input class="white-text" type="text" name="login" id="login" value="<?php echo $dados['login'];?>">
                         <label for="login">Defina seu Login de Usuário</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="email" name="email" id="email" value="<?php echo $dados['email'];?>">
+                        <input class="white-text" type="email" name="email" id="email" value="<?php echo $dados['email'];?>">
                         <label for="email">Digite seu E-mail</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="text" name="cpf" id="cpf" value="<?php echo $dados['cpf'];?>">
+                        <input class="white-text" type="text" name="cpf" id="cpf" value="<?php echo $dados['cpf'];?>">
                         <label for="cpf">Digite Seu CPF</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="tel" name="telefone" id="telefone" value="<?php echo $dados['telefone'];?>">
+                        <input class="white-text" type="tel" name="telefone" id="telefone" value="<?php echo $dados['telefone'];?>">
                         <label for="telefone">Digite Seu Telefone para Contato com DDD</label>
                     </div>
 
