@@ -81,13 +81,13 @@ endif;
                         <div class="white-text input-field col s12">
                             Senha: <input class="white-text center" type="password" name="senha"></br>
                         </div>
-                        <button type="submit" name="btn-entrar" class="btn black">Entrar</button>
+                        <button style="width: 250px" type="submit" name="btn-entrar" class="btn black">Entrar</button>
 
                     </form>
                     <br/><br/>
 
                     <h5 class="white-text">Para se cadastrar clique no link abaixo:</h5>
-                    <button type="submit" name="btn-adicionar" class="white-text center btn black"><a class="white-text" href="usuario.php">Fazer cadastro</a></button>
+                    <button style="width: 250px" type="submit" name="btn-adicionar" class="white-text center btn black"><a class="white-text" href="usuario.php">Fazer cadastro</a></button>
 
                 </div>
             </div>

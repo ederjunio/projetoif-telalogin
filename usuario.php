@@ -7,7 +7,7 @@
 </div>
 <div class="white-text center section card-panel teal brown darken-4">
     <div class="row container">
-        <h2 class="header">Cadastro de Usuário Vip</h2>
+        <h5 class="header">Cadastro de Usuário Vip</h5>
         <div class="row">
             <div class="col s12 m8 push-m2">
 
@@ -42,9 +42,10 @@
                         <input class="white-text" type="tel" name="telefone" id="telefone" placeholder="Telefone">
                         <label for="telefone">Digite Seu Telefone para Contato com DDD</label>
                     </div>
-
-                    <button type="submit" name="btn-cadastrar" class="btn black"> Cadastrar </button>
-                    <a href="index.php" type="submit" class="btn black"> Login </a>
+                    <br>
+                    <button style="width: 250px" type="submit" name="btn-cadastrar" class="btn black"> Cadastrar </button>
+                    <br><br>
+                    <a style="width: 250px" href="index.php" type="submit" class="btn black"> Login </a>
                 </form>
             </div>
         </div>

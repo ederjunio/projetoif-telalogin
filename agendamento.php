@@ -22,16 +22,14 @@ endif;
 
 <body>
     <div class="parallax-container">
-        <div class="parallax"><img src="imagens/ambiente.jpg"></div>
+        <div class="parallax"><img src="imagens/maquina.jpg"></div>
     </div>
 
     <div class="section card-panel teal brown darken-4">
 
         <div class="row container">
-            <h2 class="header">
-                <h1 class="white-text">Ótimo,
-                    <?php echo $dados['nome_usuario']; ?>.
-                </h1>
+            <h2 class="header"> 
+                <h5 class="white-text center">Obrigado pela preferência, <?php echo $dados['nome_usuario']; ?>. </h5><br>
             </h2>
 
             <div class="row">
@@ -40,26 +38,26 @@ endif;
 
                     <div style="text-align:center;">
 
-                        <h1 class="white-text">Bora Agendar !!</h1>
+                        <h5 class="white-text">Bora Agendar?</h5>
                         <form id="agendar" action="php_action/agendar.php" method="POST">
                             <input type="hidden" name="idUsuario" value="<?php echo $dados['idUsuario'];?>">
 
                             <div class="input-field col s12">
                                 <h5 class="white-text">Quando?</h5>
-                                <input type="text" id="data" name="data" class="datepicker" value="Escolher a data"
+                                <input type="text" id="data" name="data" class="datepicker white-text" value="Escolher a data"
                                     style="text-align:center;">
 
-                                <input type="text" name="horas" id="horas" class="timepicker" value="Escolher o horario"
-                                    style="text-align:center;">
+                                <input type="text" name="horas" id="horas" class="timepicker white-text" value="Escolher o horario" style="text-align:center;">
 
                             </div>
+                            <br/><br/>
 
                             <div class="row">
                                 <h5 class="white-text">O que vamos fazer?</h5>
 
-                                <div class="input-field col s12">
+                                <div class="input-field col s12 white-text">
                                     <select name="servico">
-                                        <option value="" disabled selected>Selecionar serviços :</option>
+                                        <option value="" disabled selected>Selecionar serviços:</option>
                                         <option id="1" name="1" value="1">Corte</option>
                                         <option id="4" name="4" value="2">Barba</option>
                                         <option id="5" name="5" value="3">Corte e Barba</option>
@@ -68,23 +66,16 @@ endif;
                                 </div>
 
 
-                                <button type="submit" name="btn-agendar" id="btn-agendar"
-                                    class="btn waves-effect waves-large black accent-3"><a
-                                        class="white-text">Agendar</a>
+                                <button style="width: 250px" type="submit" name="btn-agendar" id="btn-agendar"
+                                    class="btn waves-effect waves-large black accent-3"><a class="white-text">Agendar</a>
                                     <i class="large material-icons right">alarm_on</i></button>
-                                <br />
-
-                                <br />
-
-                                <button type="submit" name="btn-sair" class="btn black"><a class="white-text"
-                                        href="home.php">Voltar</a></button>
-                                <br />
-
-                                <br />
-
-                                <button type="submit" name="btn-sair" class="btn black"><a class="white-text"
-                                        href="logout.php">Clique para sair!</a></button>
-                                <br />
+                                <br>
+                                <br>
+                                <button style="width: 250px" type="submit" name="btn-sair" class="btn black"><a class="white-text" href="home.php">Voltar</a></button>
+                                <br>
+                                <br>
+                                <button style="width: 250px" type="submit" name="btn-sair" class="btn grey"><a class="white-text waves-effect waves-large" href="logout.php">Logout</a></button>
+                                <br>
 
                             </div>
                         </form>
@@ -95,7 +86,7 @@ endif;
     </div>
 
     <div class="parallax-container">
-        <div class="parallax"><img src="imagens/barber.jpg"></div>
+        <div class="parallax"><img src="imagens/maquina-pente.jpg"></div>
     </div>
 
 </body>

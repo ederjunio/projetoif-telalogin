@@ -34,8 +34,8 @@ endif;
 
                     <div class="row">
                         <div class="col s12 m14 push-m0.1">
-                            <h3 class="ligth"> Hitórico do Cliente </h3>
-                            <table class="striped">
+                            <h3 class="ligth white-text"> Hitórico do Cliente </h3>
+                            <table class="striped white-text">
                                 <thead>
                                     <tr>
                                         <th id="table_title">ID da Solicitação</th>
@@ -86,8 +86,6 @@ endif;
                             <td id="table_dados">-</td>
                         </tr>
 
-
-
                         <?php
                 endif;
                 ?>
@@ -95,19 +93,15 @@ endif;
                         </tbody>
                         </table>
                         <br>
-
-                        Legenda
+                            <p class="white-text">Legenda:</p>
+                            <p class="white-text">Serviços: 1-Corte 2-Barba 3-Corte e Barba</p>
+                            <p class="white-text">Status: 0-Pendente 1-Finalizado</p>
                         <br>
-                        Serviços: 1-Corte 2-Barba 3-Corte e Barba
+                            <button style="width: 250px" type="submit" name="btn-sair" class="btn black"><a class="white-text" href="home.php">Voltar</a></button>
+                        <br><br>
+                        <button style="width: 250px" type="submit" name="btn-sair" class="btn grey"><a class="white-text"
+                                href="logout.php">Logout</a></button>
                         <br>
-                        Status: 0-Pendente 1-Finalizado
-
-                        <br>
-                        <br>
-                        <button type="submit" name="btn-sair" class="btn black"><a class="white-text"
-                                href="home.php">Voltar</a></button>
-                        <br />
-
                     </div>
                 </div>
             </div>
@@ -117,7 +111,7 @@ endif;
 </div>
 
 <div class="parallax-container">
-    <div class="parallax"><img src="imagens/barber-fer2.jpg"></div>
+    <div class="parallax"><img src="imagens/barber-fer.jpg"></div>
 </div>
 </body>
 
