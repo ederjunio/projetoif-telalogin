@@ -14,6 +14,7 @@ if(isset($_POST['btn-entrar'])):
     if(empty($login) or empty($senha)):
         $_SESSION['mensagem'] = "Os campos login e senha não podem estar vazios!";
         
+        
     else:
         $sql = "SELECT login FROM usuario WHERE login = '$login'";
         $resultado = mysqli_query($connect, $sql);
