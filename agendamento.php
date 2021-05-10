@@ -30,7 +30,7 @@ endif;
         <div class="row container">
             <h2 class="header">
                 <h1 class="white-text">Ótimo,
-                    <?php echo $dados['nome_usuario']; ?>
+                    <?php echo $dados['nome_usuario']; ?>.
                 </h1>
             </h2>
 
@@ -61,8 +61,8 @@ endif;
                                     <select name="servico">
                                         <option value="" disabled selected>Selecionar serviços :</option>
                                         <option id="1" name="1" value="1">Corte</option>
-                                        <option id="4" name="2" value="2">Barba</option>
-                                        <option id="5" name="3" value="3">Corte e Barba</option>
+                                        <option id="4" name="4" value="2">Barba</option>
+                                        <option id="5" name="5" value="3">Corte e Barba</option>
                                         </optgroup>
                                     </select>
                                 </div>
