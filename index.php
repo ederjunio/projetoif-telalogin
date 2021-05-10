@@ -1,60 +1,107 @@
 <?php
-    include_once 'includes/header.php';
-    include_once 'includes/message.php';
+//conexão
+require_once 'php_action/db_connect.php';
+include_once 'includes/header.php';
+include_once 'includes/message.php';
+
+
+//botão enviar
+if(isset($_POST['btn-entrar'])):
+    $erros = array();
+    $login = mysqli_escape_string($connect, $_POST['login']);
+    $senha = mysqli_escape_string($connect, $_POST['senha']);
+    // verificar se o campo usuário ou senha está vazio.
+    if(empty($login) or empty($senha)):
+        $_SESSION['mensagem'] = "Os campos login e senha não podem estar vazios!";
+        
+    else:
+        $sql = "SELECT login FROM usuario WHERE login = '$login'";
+        $resultado = mysqli_query($connect, $sql);
+
+        //verificar se o que veio da variável resultado é maior do que zero se sim o usuário existe no banco de dados
+
+        if(mysqli_num_rows($resultado) > 0):
+            $senha = md5($senha);
+            $sql = "SELECT * FROM usuario WHERE login = '$login' AND senha = '$senha'";
+            $resultado = mysqli_query($connect, $sql);
+
+            if(mysqli_num_rows($resultado) == 1):
+                $dados = mysqli_fetch_array($resultado);
+                mysqli_close($connect);
+                $_SESSION['logado'] = true;
+                $_SESSION['id_usuario'] = $dados['idUsuario'];
+                header('Location:home.php');
+            else:
+                $_SESSION['mensagem'] = "Login ou senha inválidos! Tente novamente.";
+                
+            endif;
+        else:
+            $_SESSION['mensagem'] = "Usuário não possui cadastro, clique abaixo para cadastrar!";
+            
+        endif;   
+
+    endif;
+endif;
 ?>
 
-<div class="parallax-container">
-    <div class="parallax"><img src="imagens/logo.jpg"></div>
-</div>
-<div class="section card-panel teal brown darken-4">
-    <div class="row container">
-        <h2 class="header">Cadastro de Usuário Vip</h2>
-        <div class="row">
-            <div class="col s12 m8 push-m2">
 
-                <form action="php_action/create.php" method="POST">
+<html>
 
-                    <div class="input-field col s12">
-                        <input type="text" name="nome_usuario" id="nome_usuario" required>
-                        <label for="nome_usuario">Nome Completo</label>
-                    </div>
+<head>
+    <title>Barber Shop - Login</title>
+    <meta charset="utf-8">
+</head>
 
-                    <div class="input-field col s12">
-                        <input type="password" name="senha" id="senha" required>
-                        <label for="senha">Definir Senha</label>
-                    </div>
+<body>
+    <div class="parallax-container">
+        <div class="parallax"><img src="imagens/logo.jpg"></div>
+    </div>
 
-                    <div class="input-field col s12">
-                        <input type="text" name="login" id="login" required>
-                        <label for="login">Defina seu Login de Usuário</label>
-                    </div>
+    <center>
+    <div class="section card-panel teal brown darken-4">
+        <div class="row container">
+            <h2 class="header white-text">Acesso de usuário Vip</h2>
+            <!-- Se o array erros não estiver vazio é porque contém erro vai exibir.-->
+            <?php
+                if(!empty($erros)):
+                    foreach($erros as $erro):
+                        echo $erro;
+                    endforeach;
+                endif;
+            ?>
+            <div class="row">
 
-                    <div class="input-field col s12">
-                        <input type="email" name="email" id="email" required>
-                        <label for="email">Digite seu E-mail</label>
-                    </div>
+                <div class="col s12 m8 push-m2">
 
-                    <div class="input-field col s12">
-                        <input type="number" name="cpf" id="cpf" required>
-                        <label for="cpf">Digite Seu CPF</label>
-                    </div>
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                        <div class="white-text input-field col s12">
+                            Login: <input class="white-text center" type="text" name="login"></br>
+                        </div>
 
-                    <div class="input-field col s12">
-                        <input type="tel" name="telefone" id="telefone" placeholder="03535518262" required>
-                        <label for="telefone">Digite Seu Telefone para Contato com DDD</label>
-                    </div>
+                        <div class="white-text input-field col s12">
+                            Senha: <input class="white-text center" type="password" name="senha"></br>
+                        </div>
+                        <button type="submit" name="btn-entrar" class="btn black">Entrar</button>
 
-                    <button type="submit" name="btn-cadastrar" class="btn grey"> Cadastrar </button>
-                    <a href="login.php" type="submit" class="btn black"> Login </a>
-                </form>
+                    </form>
+                    <br/><br/>
+
+                    <h5 class="white-text">Para se cadastrar clique no link abaixo:</h5>
+                    <button type="submit" name="btn-adicionar" class="white-text center btn black"><a class="white-text" href="usuario.php">Fazer cadastro</a></button>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="parallax-container">
-    <div class="parallax"><img src="imagens/ambiente.jpg"></div>
-</div>
+    
+    </center>
+    <div class="parallax-container">
+        <div class="parallax"><img src="imagens/ambiente.jpg"></div>
+    </div>
 
+</body>
+
+</html>
 
 <?php
     include_once 'includes/footer.php'
