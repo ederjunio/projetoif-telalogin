@@ -52,7 +52,6 @@
                         <td><?php echo $dados['telefone'] ?></td>
                         
                         <td> <a href="../editar.php?idUsuario=<?php echo $dados['idUsuario']; ?>" class="btn-floating orange"> <i class="material-icons" >edit</i> </a></td>
-
                         
                       </div>
 
@@ -82,8 +81,7 @@
                 <button style="width: 250px" type="submit" name="btn-voltar" class="btn black"><a class="white-text" href="../home.php">Voltar</a></button>
 
             <br/><br/>
-                    
-                    
+
             </center>
         </div>
 </div>

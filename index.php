@@ -49,7 +49,7 @@ endif;
 <html>
 
 <head>
-    <title>Barber Shop - Login</title>
+    <title></title>
     <meta charset="utf-8">
 </head>
 
