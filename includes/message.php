@@ -1,5 +1,7 @@
 <?php
     session_start();
+    
+
     if(isset($_SESSION['mensagem'])): ?>
         
     <script>
@@ -9,7 +11,9 @@
     };
     </script>
 
+
+
     <?php
     endif;
-    session_unset();
+    //session_unset();
 ?>

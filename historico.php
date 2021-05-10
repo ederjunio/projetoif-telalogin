@@ -11,8 +11,18 @@ session_start();
 
 //verificação
 if(!isset($_SESSION['logado'])):
-    header('Location: login.php');
+    header('Location: index.php');
 endif;
+
+
+//Dados
+/*
+$id = $_SESSION['id_usuario'];
+$sql = "SELECT * FROM usuario WHERE idUsuario = '$id'";
+$resultado = mysqli_query($connect, $sql);
+$dados = mysqli_fetch_array($resultado);
+mysqli_close($connect);
+*/
 
 ?>
 
@@ -34,7 +44,7 @@ endif;
 
                     <div class="row">
                         <div class="col s12 m14 push-m0.1">
-                            <h3 class="ligth white-text"> Hitórico do Cliente </h3>
+                            <h3 class="ligth white-text">Hitórico de agendamento </h3>
                             <table class="striped white-text">
                                 <thead>
                                     <tr>
@@ -42,7 +52,7 @@ endif;
                                         <th id="table_title">Data Solicitação</th>
                                         <th id="table_title">Data do Serviço</th>
                                         <th id="table_title">Serviço</th>
-                                        <th id="table_title">Status</th>
+                                        <!-- <th id="table_title">Status</th> -->
 
                                     </tr>
                                 </thead>
@@ -95,10 +105,37 @@ endif;
                         <br>
                             <p class="white-text">Legenda:</p>
                             <p class="white-text">Serviços: 1-Corte 2-Barba 3-Corte e Barba</p>
-                            <p class="white-text">Status: 0-Pendente 1-Finalizado</p>
+                            <!-- <p class="white-text">Status: 0-Pendente 1-Finalizado</p> -->
                         <br>
+                        <br>
+
+                            <h5 class="white-text">Faça um novo agendamento!</h5>
+                        <br>
+                        <br>
+
+                        <?php
+
+                            //Dados
+                            $id = $_SESSION['id_usuario'];
+                            $sql = "SELECT * FROM usuario WHERE idUsuario = '$id'";
+                            $resultado = mysqli_query($connect, $sql);
+                            $dados = mysqli_fetch_array($resultado);
+                            mysqli_close($connect);
+
+
+                        ?>
+
+
+                                <button style="width: 250px" type="submit" name="btn-agendar" class="btn black"><a class="white-text" href="agendamento.php?idUsuario=<?php echo $dados['idUsuario']; ?>">Clique para agendar</a></button>
+                        <br>
+                        <br>
+
                             <button style="width: 250px" type="submit" name="btn-sair" class="btn black"><a class="white-text" href="home.php">Voltar</a></button>
                         <br><br>
+
+
+
+
                         <button style="width: 250px" type="submit" name="btn-sair" class="btn grey"><a class="white-text"
                                 href="logout.php">Logout</a></button>
                         <br>

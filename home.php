@@ -8,7 +8,7 @@ session_start();
 
 //verificação
 if(!isset($_SESSION['logado'])):
-    header('Location: login.php');
+    header('Location: index.php');
 endif;
 
 //Dados
@@ -62,8 +62,7 @@ mysqli_close($connect);
                                 href="editar.php?idUsuario=<?php echo $dados['idUsuario']; ?>">Editar seu cadastro</a></button>
                         <br /><br />
 
-                        <button style="width: 250px" type="submit" name="btn-sair" class="btn grey"><a class="white-text"
-                                href="logout.php">Logout</a></button>
+                        <button style="width: 250px" type="submit" name="btn-sair" class="btn grey"><a class="white-text" href="logout.php">Logout</a></button>
                         <br /><br />
                     </div>
                 </div>

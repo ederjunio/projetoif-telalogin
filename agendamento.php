@@ -7,7 +7,7 @@ session_start();
 
 //verificação
 if(!isset($_SESSION['logado'])):
-    header('Location: login.php');
+    header('Location: index.php');
 endif;
 
 if(isset($_GET['idUsuario'])):
@@ -52,11 +52,11 @@ endif;
                             </div>
                             <br/><br/>
 
-                            <div class="row">
+                            <div class="white-text row">
                                 <h5 class="white-text">O que vamos fazer?</h5>
 
                                 <div class="input-field col s12 white-text">
-                                    <select name="servico">
+                                    <select class="white-text" name="servico">
                                         <option value="" disabled selected>Selecionar serviços:</option>
                                         <option id="1" name="1" value="1">Corte</option>
                                         <option id="4" name="4" value="2">Barba</option>
