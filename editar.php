@@ -7,7 +7,7 @@ session_start();
 
 //verificação
 if(!isset($_SESSION['logado'])):
-    header('Location: login.php');
+    header('Location: index.php');
 endif;
 
 if(isset($_GET['idUsuario'])):
@@ -63,7 +63,7 @@ endif;
                     </div>
 
                     <button type="submit" name="btn-editar" class="btn grey"> Atualizar </button>
-                    <a href="login.php" type="submit" class="btn black"> Novo Login </a>
+                    <a href="index.php" type="submit" class="btn black"> Novo Login </a>
                     
                 </form>
             </div>
