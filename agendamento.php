@@ -56,7 +56,7 @@ endif;
                                 <h5 class="white-text">O que vamos fazer?</h5>
 
                                 <div class="input-field col s12 white-text">
-                                    <select class="white-text" name="servico">
+                                    <select class="browser-default" name="servico">
                                         <option value="" disabled selected>Selecionar serviços:</option>
                                         <option id="1" name="1" value="1">Corte</option>
                                         <option id="4" name="4" value="2">Barba</option>
